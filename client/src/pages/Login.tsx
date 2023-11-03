@@ -1,0 +1,50 @@
+import { useState } from "react";
+
+interface Props {
+  onLogIn: (emailValue: string, passwordValue: string) => void;
+}
+
+function Login({ onLogIn }: Props) {
+  const [emailValue, setEmailValue] = useState("");
+  const [passwordValue, setPasswordValue] = useState("");
+
+  return (
+    <div className="flex justify-center items-center h-[90vh]">
+      <div className="w-1/3 h-3/4 border rounded-lg flex flex-col justify-evenly items-center shadow-md border-blue-500 px-20">
+        <div className="w-fit">
+          <h3 className="text-3xl font-bold">Log in</h3>
+        </div>
+        <div className="w-full">
+          <input
+            type="text"
+            className="border rounded-md w-full h-12 text-lg pl-1 border-gray-300 outline-blue-500 bg-gray-100"
+            placeholder="Email"
+            onChange={(e) => {
+              setEmailValue(e.target.value);
+            }}
+          />
+        </div>
+        <div className="w-full">
+          <input
+            type="text"
+            className="border rounded-md w-full h-12 text-lg pl-1 border-gray-300 outline-blue-500 bg-gray-100"
+            placeholder="Password"
+            onChange={(e) => {
+              setPasswordValue(e.target.value);
+            }}
+          />
+        </div>
+        <div>
+          <button
+            className="rounded-md bg-blue-500 px-6 py-2 text-white"
+            onClick={() => onLogIn(emailValue, passwordValue)}
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Login;
