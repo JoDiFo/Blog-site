@@ -1,5 +1,5 @@
 import KnightImage from "../images/hollow knight.png";
-import { Header } from "../components/index";
+import { Footer } from "../components/index";
 
 interface Props {
   imgSrc: string;
@@ -40,6 +40,8 @@ function Home() {
           <ContentLine imgSrc={KnightImage} imgAlt="image" />
         </div>
       </main>
+
+      <Footer />
     </>
   );
 }

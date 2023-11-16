@@ -4,6 +4,33 @@ import { Header } from "./components/index";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+const headerLinks = [
+  {
+    id: "header_1",
+    linkName: "Home",
+    linkTo: "",
+    isActive: true,
+  },
+  {
+    id: "header_2",
+    linkName: "Features",
+    linkTo: "features",
+    isActive: true,
+  },
+  {
+    id: "header_3",
+    linkName: "Tutorials",
+    linkTo: "tutorials",
+    isActive: true,
+  },
+  {
+    id: "header_4",
+    linkName: "Courses",
+    linkTo: "courses",
+    isActive: true,
+  },
+];
+
 export default function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const navigate = useNavigate();
@@ -42,7 +69,12 @@ export default function App() {
 
   return (
     <>
-      <Header loggedIn={loggedIn} handleStartForFree={handleStartForFree} />
+      <Header
+        loggedIn={loggedIn}
+        handleStartForFree={handleStartForFree}
+        headerElements={headerLinks}
+      />
+
       <Routes>
         <Route path="" element={<Home />} />
         <Route path="features" element={<Features />} />
