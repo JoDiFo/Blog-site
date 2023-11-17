@@ -1,0 +1,51 @@
+[
+    {
+        "id": "course_1",
+        "imgSrc": "../Images/hollow knight.png",
+        "name": "C++",
+        "description": "Full course on C++ programming language",
+        "isActive": true
+    },
+    {
+        "id": "course_2",
+        "imgSrc": "../Images/hollow knight.png",
+        "name": "C#",
+        "description": "Full course on C# programming language",
+        "isActive": true
+    },
+    {
+        "id": "course_3",
+        "imgSrc": "../Images/hollow knight.png",
+        "name": "Python",
+        "description": "Full course on Python programming language",
+        "isActive": true
+    },
+    {
+        "id": "course_4",
+        "imgSrc": "../Images/hollow knight.png",
+        "name": "Java",
+        "description": "Full course on Java programming language",
+        "isActive": true
+    },
+    {
+        "id": "course_5",
+        "imgSrc": "../Images/hollow knight.png",
+        "name": "Ruby",
+        "description": "Full course on Ruby programming language",
+        "isActive": true
+    },
+    {
+        "id": "course_6",
+        "imgSrc": "../Images/hollow knight.png",
+        "name": "JavaScript",
+        "description": "Full course on JavaScript programming language",
+        "isActive": true
+    },
+    {
+        "id": "course_7",
+        "imgSrc": "../Images/hollow knight.png",
+        "name": "C",
+        "description": "Full course on C programming language",
+        "isActive": true
+    }
+]
