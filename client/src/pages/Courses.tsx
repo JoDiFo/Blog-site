@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import { CourseCard } from "../components/index";
 
-const imagesEndPoint = "http://localhost:8000/images/";
+const imagesURL = "http://localhost:8000/images/";
 
 type CoursesData = {
   id: string;
@@ -34,6 +34,10 @@ function Courses() {
 
   return (
     <>
+      <h2 className="text-3xl text-center my-3">
+        Curses that are currently available
+      </h2>
+
       <div className="grid grid-cols-4 gap-y-10 py-3 justify-items-center">
         {coursesData === undefined ? (
           <div>No courses are currently available</div>
@@ -43,7 +47,7 @@ function Courses() {
               item.isActive && (
                 <CourseCard
                   key={item.id}
-                  imgSrc={imagesEndPoint + item.imageName}
+                  imgSrc={imagesURL + item.imageName}
                   name={item.name}
                   description={item.description}
                 />
