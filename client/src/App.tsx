@@ -2,7 +2,6 @@ import { Route, Routes, useNavigate } from "react-router-dom";
 import { Home, Courses, Features, Tutorials, Login, Profile } from "./pages";
 import { Header } from "./components/index";
 import { useState, useEffect } from "react";
-import axios from "axios";
 
 const headerLinks = [
   {
@@ -36,11 +35,7 @@ export default function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`https://jsonplaceholder.typicode.com/users`).then((res) => {
-      const persons = res.data;
-      console.log({ persons });
-      console.log("app started");
-    });
+    console.log("App started");
   }, []);
 
   const handleLogin = (emailValue: string, passwordValue: string) => {

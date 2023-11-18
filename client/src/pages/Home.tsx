@@ -1,4 +1,4 @@
-import KnightImage from "../images/hollow knight.png";
+import KnightImage from "../images/hollow-knight.png";
 import { Footer } from "../components/index";
 
 interface Props {
