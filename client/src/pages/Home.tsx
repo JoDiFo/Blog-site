@@ -1,43 +1,69 @@
-import KnightImage from "../images/hollow-knight.png";
-import { Footer } from "../components/index";
+import { useEffect, useState } from "react";
+import { Footer, Article } from "../components/index";
 
-interface Props {
-  imgSrc: string;
-  imgAlt: string;
-}
+const imagesURL = "http://localhost:8000/images/";
 
-const ContentLine = ({ imgSrc, imgAlt }: Props) => {
-  return (
-    <>
-      <div className="flex flex-row gap-5 justify-around px-5 py-3">
-        <img src={imgSrc} alt={imgAlt} className="w-2/5 rounded-lg" />
-        <div className="flex flex-col justify-between py-2">
-          <h2 className="font-bold text-4xl">Hollow Knight</h2>
-          <p className="leading-loose">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere
-            excepturi perspiciatis aspernatur veritatis dignissimos delectus.
-            Asperiores, eligendi dicta eveniet odit, corporis deleniti quisquam
-            vero inventore ipsa ea totam porro, numquam labore quaerat iusto!
-            Reprehenderit, quam. Assumenda reiciendis quis quos eaque facere.
-            Debitis est fuga placeat. Sint, excepturi? Consequatur laudantium
-            cumque a eius suscipit ducimus facilis quaerat. Eligendi alias ipsa
-            quibusdam, fugit cumque vel recusandae facilis ducimus laboriosam
-            temporibus, commodi consequuntur.
-          </p>
-        </div>
-      </div>
-    </>
-  );
-};
+type ArticleData = {
+  id: string;
+  title: string;
+  imageName: string;
+  body: string;
+}[];
 
 function Home() {
+  const [articlesData, setArticlesData] = useState<ArticleData>();
+
+  const getData = () => {
+    fetch("http://localhost:8000/articles")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setArticlesData(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
   return (
     <>
       <main>
         <div className="flex flex-col gap-16">
-          <ContentLine imgSrc={KnightImage} imgAlt="image" />
-          <ContentLine imgSrc={KnightImage} imgAlt="image" />
-          <ContentLine imgSrc={KnightImage} imgAlt="image" />
+          {articlesData === undefined ? (
+            <div className="text-2xl text-gray-400 text-center">
+              No articles
+            </div>
+          ) : (
+            articlesData.map((item) => (
+              <Article
+                key={item.id}
+                title={item.title}
+                imgSrc={imagesURL + item.imageName}
+                body={item.body}
+              />
+            ))
+          )}
+
+          {/* <Article
+            title="Hollow Knight"
+            imgSrc={KnightImage}
+            body="as;ldkfjas;dlfkjas;ldfkjas;ldfkjasdk;lfj"
+          />
+          <Article
+            title="Hollow Knight"
+            imgSrc={KnightImage}
+            body="as;ldkfjas;dlfkjas;ldfkjas;ldfkjasdk;lfj"
+          />
+          <Article
+            title="Hollow Knight"
+            imgSrc={KnightImage}
+            body="as;ldkfjas;dlfkjas;ldfkjas;ldfkjasdk;lfj"
+          /> */}
         </div>
       </main>
 
