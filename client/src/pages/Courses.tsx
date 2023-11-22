@@ -16,7 +16,7 @@ function Courses() {
   const [coursesData, setCoursesData] = useState<CoursesData>();
 
   const getData = () => {
-    fetch("http://localhost:8000/courses/data")
+    fetch("http://localhost:8000/courses")
       .then((res) => {
         return res.json();
       })
