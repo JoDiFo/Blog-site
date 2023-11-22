@@ -33,6 +33,7 @@ function Home() {
   return (
     <>
       <main>
+        <h2 className="text-center text-4xl font-bold my-2">Articles</h2>
         <div className="flex flex-col gap-16">
           {articlesData === undefined ? (
             <div className="text-2xl text-gray-400 text-center">
@@ -48,22 +49,6 @@ function Home() {
               />
             ))
           )}
-
-          {/* <Article
-            title="Hollow Knight"
-            imgSrc={KnightImage}
-            body="as;ldkfjas;dlfkjas;ldfkjas;ldfkjasdk;lfj"
-          />
-          <Article
-            title="Hollow Knight"
-            imgSrc={KnightImage}
-            body="as;ldkfjas;dlfkjas;ldfkjas;ldfkjasdk;lfj"
-          />
-          <Article
-            title="Hollow Knight"
-            imgSrc={KnightImage}
-            body="as;ldkfjas;dlfkjas;ldfkjas;ldfkjasdk;lfj"
-          /> */}
         </div>
       </main>
 
