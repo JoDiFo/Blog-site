@@ -1,0 +1,26 @@
+[
+    {
+        "id": "header_1",
+        "linkName": "Home",
+        "linkTo": "",
+        "isActive": true
+    },
+    {
+        "id": "header_2",
+        "linkName": "Features",
+        "linkTo": "features",
+        "isActive": true
+    },
+    {
+        "id": "header_3",
+        "linkName": "Tutorials",
+        "linkTo": "tutorials",
+        "isActive": true
+    },
+    {
+        "id": "header_4",
+        "linkName": "Courses",
+        "linkTo": "courses",
+        "isActive": true
+    }
+]
