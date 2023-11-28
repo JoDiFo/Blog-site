@@ -3,6 +3,7 @@ import Courses from './Courses';
 import Features from './Features';
 import Tutorials from './Tutorials';
 import Login from "./Login";
+import Register from './Register';
 import Profile from './Profile';
 
 export {
@@ -11,5 +12,6 @@ export {
     Features,
     Tutorials,
     Login,
+    Register,
     Profile,
 }

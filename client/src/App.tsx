@@ -1,5 +1,13 @@
 import { Route, Routes, useNavigate } from "react-router-dom";
-import { Home, Courses, Features, Tutorials, Login, Profile } from "./pages";
+import {
+  Home,
+  Courses,
+  Features,
+  Tutorials,
+  Login,
+  Register,
+  Profile,
+} from "./pages";
 import { Header } from "./components/index";
 import { useState, useEffect } from "react";
 
@@ -31,29 +39,29 @@ export default function App() {
       .catch((err) => console.log(err));
   };
 
-  const handleLogin = async (emailValue: string, passwordValue: string) => {
-    if (emailValue === "" && passwordValue === "") {
-      alert("Please enter your email and password.");
-      return;
-    }
+  // const handleLogin = async (emailValue: string, passwordValue: string) => {
+  //   if (emailValue === "" && passwordValue === "") {
+  //     alert("Please enter your email and password.");
+  //     return;
+  //   }
 
-    const url = SERVER_PORT + "login";
+  //   const url = SERVER_PORT + "login";
 
-    await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email: emailValue, password: passwordValue }),
-    })
-      .then((res) => {
-        console.log(res.status);
-      })
-      .catch((err) => console.log(err));
+  //   await fetch(url, {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify({ email: emailValue, password: passwordValue }),
+  //   })
+  //     .then((res) => {
+  //       console.log(res.status);
+  //     })
+  //     .catch((err) => console.log(err));
 
-    setLoggedIn(true);
-    navigate("");
-  };
+  //   setLoggedIn(true);
+  //   navigate("");
+  // };
 
   const handleLogOut = () => {
     console.log("Log out");
@@ -79,7 +87,8 @@ export default function App() {
         <Route path="features" element={<Features />} />
         <Route path="courses" element={<Courses />} />
         <Route path="tutorials" element={<Tutorials />} />
-        <Route path="login" element={<Login onLogIn={handleLogin} />} />
+        <Route path="login" element={<Login />} />
+        <Route path="register" element={<Register />} />
         <Route path="profile" element={<Profile onLogOut={handleLogOut} />} />
       </Routes>
     </>

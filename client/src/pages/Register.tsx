@@ -2,13 +2,13 @@ import { useState } from "react";
 
 const SERVER_PORT = "http://localhost:8000/";
 
-async function handleLogin(email: string, password: string) {
+async function handleRegister(email: string, password: string) {
   if (email === "" && password === "") {
     alert("Please enter your email and password.");
     return;
   }
 
-  const url = SERVER_PORT + "login";
+  const url = SERVER_PORT + "register";
 
   await fetch(url, {
     method: "POST",
@@ -23,7 +23,7 @@ async function handleLogin(email: string, password: string) {
     .catch((err) => console.log(err));
 }
 
-function Login() {
+function Register() {
   const [emailValue, setEmailValue] = useState("");
   const [passwordValue, setPasswordValue] = useState("");
 
@@ -31,7 +31,7 @@ function Login() {
     <div className="flex justify-center items-center h-[90vh]">
       <div className="w-1/3 h-3/4 border rounded-lg flex flex-col justify-evenly items-center shadow-md border-blue-500 px-20">
         <div className="w-fit">
-          <h3 className="text-3xl font-bold">Log in</h3>
+          <h3 className="text-3xl font-bold">Register</h3>
         </div>
         <div className="w-full">
           <input
@@ -56,7 +56,7 @@ function Login() {
         <div>
           <button
             className="rounded-md bg-blue-500 px-6 py-2 text-white"
-            onClick={() => handleLogin(emailValue, passwordValue)}
+            onClick={() => handleRegister(emailValue, passwordValue)}
           >
             Submit
           </button>
@@ -66,4 +66,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Register;

@@ -16,6 +16,7 @@ function Profile({ onLogOut }: Props) {
               type="text"
               className="border rounded-md w-full h-12 text-lg pl-1 border-gray-300 outline-blue-500 bg-gray-100"
               value="Email"
+              onChange={(e) => console.log(e)}
             />
             <button className="bg-gray-300 border ml-4 border-gray-600 py-1 px-3 rounded-md">
               Change
@@ -27,6 +28,7 @@ function Profile({ onLogOut }: Props) {
               type="text"
               className="border rounded-md w-full h-12 text-lg pl-1 border-gray-300 outline-blue-500 bg-gray-100"
               value="Password"
+              onChange={(e) => console.log(e)}
             />
             <button className="bg-gray-300 border ml-4 border-gray-600 py-1 px-3 rounded-md">
               Change
